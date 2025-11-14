@@ -52,3 +52,9 @@ async def calculate_euclidean_distance(x: float = 1, y: float = 2):
 @app.get("/secret_function/")
 async def unknown_function():
     return {"message": "Hello, agent! Come back later for a mission."}
+
+
+@app.get("/add/")
+async def add_numbers(x: float = 0, y: float = 0):
+    """Add two numbers"""
+    return {"result": x + y}
