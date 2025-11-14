@@ -91,6 +91,8 @@ jobs:
 
       - name: Generate coverage report
         run: |
+          mkdir -p ${{ github.workspace }}/coverage
+          chmod 777 ${{ github.workspace }}/coverage
           docker run --rm -v ${{ github.workspace }}/coverage:/app/coverage cheese-app-api:${{ github.sha }} pytest tests/unit/ --cov=api --cov-report=term --cov-report=xml --cov-report=html:coverage
         continue-on-error: true
 
