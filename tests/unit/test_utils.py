@@ -88,3 +88,4 @@ class TestPower:
         assert power(True, 5) == 1
         assert power(False, 5) == 0
         assert power(2, True) == 2
+def broken(): assert False
