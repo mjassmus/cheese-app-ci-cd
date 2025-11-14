@@ -38,15 +38,15 @@ RUN pip install --no-cache-dir --user .
 COPY --chown=app:app src/api-service/api/ ./api/
 COPY --chown=app:app tests/ ./tests/
 COPY --chown=app:app pytest.ini ./
-COPY --chown=app:app docker-entrypoint.sh ./
+COPY --chown=app:app docker-entrypoint.sh /docker-entrypoint.sh
 
 # Make entrypoint executable
 USER root
-RUN chmod +x docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 USER app
 
 # Expose port
 EXPOSE 9000
 
 # Entry point
-ENTRYPOINT ["/bin/bash", "docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
