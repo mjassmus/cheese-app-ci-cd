@@ -39,7 +39,7 @@ jobs:
 
   # Job 2: Run linting and formatting checks
   lint-and-format:
-    name: Lint and Format Check
+    name: lint-and-format
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -68,7 +68,7 @@ jobs:
 
   # Job 3: Run unit tests
   unit-tests:
-    name: Unit Tests
+    name: unit-tests
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -105,7 +105,7 @@ jobs:
 
   # Job 4: Run integration tests
   integration-tests:
-    name: Integration Tests
+    name: integration-tests
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -128,7 +128,7 @@ jobs:
 
   # Job 5: Run system tests
   system-tests:
-    name: System Tests
+    name: system-tests
     runs-on: ubuntu-latest
     needs: build
     steps:
